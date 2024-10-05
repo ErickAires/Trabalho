@@ -129,46 +129,44 @@ if (isset($_POST['login'])) {
         
         <!-- Login Start -->
         <div class="login">
-            <div class="container">
+            <div align = "center"  class="container">
                 
                 
-                <div class="row">
+                
                     <div class="col-md-6">
                         <div class="section-header">
                             <h3>Entrar</h3>    
                         
                         </div>
                         <div class="login-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>E-mail / Username</label>
-                                    <input class="form-control" type="text" placeholder="First Name">
+                            
+                                <div align = "left" class="col-md-6">
+                                    <label>E-mail</label>
+                                    <input class="form-control" type="text" placeholder="exemplo@gmail.com">
                                 </div>
-                                <div class="col-md-6">
-                                    <label>Password</label>
-                                    <input class="form-control" type="text" placeholder="Last Name">
+                                <div align = "left" class="col-md-6">
+                                    <label>Senha</label>
+                                    <input class="form-control" type="text" placeholder="Senha">
                                 </div>
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="newaccount">
-                                        <label class="custom-control-label" for="newaccount">Keep me signed in</label>
+                                        <label class="custom-control-label" for="newaccount">Mantenha-me conectado</label>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <button class="btn">Submit</button>
+                                    <button class="btn">Entrar</button>
                                 </div>
-                            </div>
+                            
                         </div>
                     </div>
                     
                    
-                                <div class="col-md-12">
-                                    <button class="btn">Enviar</button>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
         <!-- Login End -->
