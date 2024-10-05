@@ -2,6 +2,7 @@
 require_once 'conexao.php';
 if (isset($_POST['cadastrar'])) {
     $nome = $_POST['nome'];
+    $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
     $cpf = $_POST['cpf'];
@@ -10,9 +11,10 @@ if (isset($_POST['cadastrar'])) {
    
 
     try {
-        $query = "INSERT INTO usuarios (nome, email, senha, cpf, endereco) VALUES (:nome, :email, :senha)";
+        $query = "INSERT INTO usuarios (nome, sobrenome, email, senha, cpf, endereco, telefone) VALUES (:nome, :sobrenome, :email, :senha, :cpf, :endereco, :telefone)";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':nome', $nome);
+        $stmt->bindParam(':sobrenome', $sobrenome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senha);
         $stmt->bindParam(':cpf', $cpf);
@@ -126,52 +128,53 @@ if (isset($_POST['cadastrar'])) {
                 </nav>
             </div>
         </div>
-        <!-- Header End -->                  
+        <!-- Header End --> 
+        <div align="center" class="section-header">    
                     <div class="col-md-6"> 
-                        <div class="section-header2">
+                        <div class="section-header">
                             <h3>Cadastrar</h3>    
                         
-                        </div>   
-                        <div method="post" action="cadastro.php" class="register-form">
-                            
-                            <div class="row">
-                            <form method="post" action="cadastro.php" class="register-form">
+                        </div> 
                         
-                               
+                            <form method="post" action="cadastro.php" class="register-form">
+
                                 <div class="col-md-6">
                                     <label for="nome">Nome</label>
-                                    <input id="nome" class="form-control" type="text" placeholder="Nome">
+                                    <input id="nome" class="form-control" type="text" placeholder="nome" required><br>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="sobrenome">Sobrenome</label>
-                                    <input id="sobrenome"  class="form-control" type="text" placeholder="Sobrenome">
+                                    <input id="sobrenome"  class="form-control" type="text" placeholder="sobrenome" required><br>
                                 </div>
                                 
                                 <div class="col-md-6">
-                                    <label for="E-mail">E-mail</label>
-                                    <input id="E-mail" class="form-control" type="text" placeholder="E-mail" required>
+                                    <label for="email">E-mail</label>
+                                    <input id="email" class="form-control" type="text" placeholder="email" required><br>
                                 </div>
                                     <div class="col-md-6"></div>
                                     <label for="senha">Senha</label>
-                                    <input id="senha" class="form-control" type="text" placeholder="Senha">
+                                    <input id="senha" class="form-control" type="text" placeholder="senha" required><br>
                                     <div class="col-md-6">
                                     <label for="cpf">CPF</label>
-                                    <input id="cpf" class="form-control" type="text" placeholder="CPF">
+                                    <input id="cpf" class="form-control" type="text" placeholder="cpf" required><br>
                                     <div class="col-md-6"></div>
                                     <label for="endereco">Endereço</label>
-                                    <input id="endereco" class="form-control" type="text" placeholder="Endereço">
+                                    <input id="endereco" class="form-control" type="text" placeholder="endereço" required><br>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="telefone">Telefone</label>
-                                    <input id="telefone" class="form-control" type="text" placeholder="Telefone">
+                                    <input id="telefone" class="form-control" type="text" placeholder="telefone"required>
+                                   <br>
 
                                 </div>
+        </div>
+                     
                             
                                 
                             
                                 <div class="col-md-12">
-                                    <!--<button class="btn">Enviar</button>-->
-                                    <input type="submit" name="cadastro" value="cadastro">
+                                    <button class="btn">Cadastrar</button>
+                                    <!--<input type="submit" name="cadastro" value="cadastro">-->
                                 </div>
                                 </form>
                             </div>
