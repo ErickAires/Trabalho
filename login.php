@@ -146,7 +146,7 @@ if (isset($_POST['login'])) {
                                 </div>
                                 <div align = "left" class="col-md-6">
                                     <label>Senha</label>
-                                    <input class="form-control" type="text" placeholder="Senha">
+                                    <input class="form-control" type="password" placeholder="Senha">
                                 </div>
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
