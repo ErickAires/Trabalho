@@ -129,41 +129,47 @@ if (isset($_POST['cadastrar'])) {
             </div>
         </div>
         <!-- Header End --> 
-        <div align="center" class="section-header">    
-                    <div class="col-md-6"> 
-                        <div class="section-header">
+        <div align="center" class="headercadastro">    
+                    <div class="fundocadastro"> 
+                        <div  class="section-header">
                             <h3>Cadastrar</h3>    
                         
                         </div> 
                         
                             <form method="post" action="cadastro.php" class="register-form">
 
-                                <div class="col-md-6">
+                                <div align="left" class="fundocadastro">
                                     <label for="nome">Nome</label>
-                                    <input id="nome" class="form-control" type="text" placeholder="nome" required><br>
+                                    <input id="nome" class="form-control" type="text" placeholder="Nome" required><br>
                                 </div>
-                                <div class="col-md-6">
+                                <div align="left" class="fundocadastro">
                                     <label for="sobrenome">Sobrenome</label>
-                                    <input id="sobrenome"  class="form-control" type="text" placeholder="sobrenome" required><br>
+                                    <input id="sobrenome"  class="form-control" type="text" placeholder="Sobrenome" required><br>
                                 </div>
                                 
-                                <div class="col-md-6">
+                                <div align="left" class="fundocadastro">
                                     <label for="email">E-mail</label>
-                                    <input id="email" class="form-control" type="text" placeholder="email" required><br>
+                                    <input id="email" class="form-control" type="text" placeholder="exemplo@gmail.com" required><br>
                                 </div>
-                                    <div class="col-md-6"></div>
-                                    <label for="senha">Senha</label>
-                                    <input id="senha" class="form-control" type="text" placeholder="senha" required><br>
-                                    <div class="col-md-6">
+
+                                <div align="left" class="fundocadastro">
+                                    <label  for="senha">Senha</label>
+                                    <input id="senha" class="form-control" type="password" placeholder="Senha" required><br>
+                                </div>
+
+                                <div align="left" class="fundocadastro">
                                     <label for="cpf">CPF</label>
-                                    <input id="cpf" class="form-control" type="text" placeholder="cpf" required><br>
-                                    <div class="col-md-6"></div>
-                                    <label for="endereco">Endereço</label>
-                                    <input id="endereco" class="form-control" type="text" placeholder="endereço" required><br>
+                                    <input id="cpf" class="form-control" type="text" placeholder="000.000.000-00" required><br>
                                 </div>
-                                <div class="col-md-6">
+
+                                <div align="left" class="fundocadastro">
+                                    <label for="endereco">Endereço</label>
+                                    <input id="endereco" class="form-control" type="text" placeholder="Endereço" required><br>
+                                </div>
+                                
+                                <div align="left" class="fundocadastro">
                                     <label for="telefone">Telefone</label>
-                                    <input id="telefone" class="form-control" type="text" placeholder="telefone"required>
+                                    <input id="telefone" class="form-control" type="text" placeholder="(00)00000-0000"required>
                                    <br>
 
                                 </div>

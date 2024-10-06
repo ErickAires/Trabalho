@@ -128,32 +128,35 @@ if (isset($_POST['login'])) {
        
         
         <!-- Login Start -->
-        <div class="login">
-            <div align = "center"  class="container">
+        <div class="headercadastro">
+            <div align = "center"  class="headercadastro">
                 
                 
                 
-                    <div class="col-md-6">
+                    <div class="fundocadastro">
                         <div class="section-header">
                             <h3>Entrar</h3>    
                         
                         </div>
                         <div class="login-form">
                             
-                                <div align = "left" class="col-md-6">
+                                <div align = "left" class="fundocadastro">
                                     <label>E-mail</label>
-                                    <input class="form-control" type="text" placeholder="exemplo@gmail.com">
+                                    <input class="form-control" type="text" placeholder="exemplo@gmail.com"> 
                                 </div>
-                                <div align = "left" class="col-md-6">
+
+                                <div align = "left" class="fundocadastro">
                                     <label>Senha</label>
                                     <input class="form-control" type="password" placeholder="Senha">
                                 </div>
+
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="newaccount">
                                         <label class="custom-control-label" for="newaccount">Mantenha-me conectado</label>
                                     </div>
                                 </div>
+
                                 <div class="col-md-12">
                                     <button class="btn">Entrar</button>
                                 </div>
