@@ -66,20 +66,21 @@ if (isset($_POST['login'])) {
                     </div>
                     <div class="col-md-6">
                         <div class="search">
-                            <input type="text" placeholder="Search">
+                            <input type="text" placeholder="Pesquisar">
                             <button><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="user">
                             <div class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Minha Conta</a>
                                 <div class="dropdown-menu">
-                                    <a href="#" class="dropdown-item">Entrar</a>
-                                    <a href="#" class="dropdown-item">Cadastrar</a>
+                                    <a href="login.php" class="dropdown-item">Entrar</a>
+                                    <a href="cadastro.php" class="dropdown-item">Cadastrar</a>
                                 </div>
                             </div>
                             <div class="cart">
+                                <a href="cart.html"></a>
                                 <i class="fa fa-cart-plus"></i>
                                 <span>(0)</span>
                             </div>
@@ -95,28 +96,27 @@ if (isset($_POST['login'])) {
         <div class="header">
             <div class="container">
                 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                    <a href="#" class="navbar-brand">Inicio</a>
+                    <a href="#" class="navbar-brand">MENU</a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav m-auto">
-                            <a href="index.html" class="nav-item nav-link active">Pagina Inicial</a>
-                            <a href="product-list.html" class="nav-item nav-link">Produtos</a>
+                            <a href="index.html" class="nav-item nav-link active">Início</a>
+                        
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Páginas</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">paginas</a>
                                 <div class="dropdown-menu">
-                                    <a href="product-list.html" class="dropdown-item">Produtos</a>
-                                    <a href="product-detail.html" class="dropdown-item">Detalhes do produto</a>
+                                    <a href="product-list.html" class="dropdown-item">Produto</a>
                                     <a href="cart.html" class="dropdown-item">Carrinho</a>
-                                    <a href="wishlist.html" class="dropdown-item">Favoritos</a>
-                                    <a href="checkout.html" class="dropdown-item">Caixa</a>
-                                    <a href="login.html" class="dropdown-item">Entrar ou cadastrar</a>
+                                    <a href="wishlist.html" class="dropdown-item">Favorito</a>
+                                    <a href="login.php" class="dropdown-item">Entrar</a>
+                                    <a href="cadastro.php" class="dropdown-item">Cadastrar</a>
                                     <a href="my-account.html" class="dropdown-item">Minha Conta</a>
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contate-nos</a>
+                            
                         </div>
                     </div>
                 </nav>
@@ -142,7 +142,7 @@ if (isset($_POST['login'])) {
                             
                                 <div align = "left" class="fundocadastro">
                                     <label>E-mail</label>
-                                    <input class="form-control" type="text" placeholder="exemplo@gmail.com"> 
+                                    <input class="form-control" type="email" placeholder="exemplo@gmail.com" require=""> 
                                 </div>
 
                                 <div align = "left" class="fundocadastro">
@@ -175,54 +175,52 @@ if (isset($_POST['login'])) {
         <!-- Login End -->
         
         
-        <!-- Footer Start -->
-        <div class="footer">
+       <!-- Footer Start -->
+       <div class="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h1>E Shop</h1>
+                        <div align="center" class="logobaixo">
+                            <a href="">
+                                <img src="img/logo.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+
+                            <h1>PlayUsados</h1>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin rutrum massa. Suspendisse sollicitudin rutrum massa. Vestibulum porttitor, metus sed pretium elementum, nisi nibh sodales quam, non lobortis neque felis id mauris.
+                                Na PlayUsados, acreditamos que a tecnologia deve ser acessível e sustentável. Oferecemos uma seleção de hardware usado, testado e de qualidade, ideal para quem busca performance sem comprometer o orçamento. Nossa missão é conectar você às melhores oportunidades em tecnologia, promovendo a reutilização e contribuindo para um futuro mais sustentável.  
                             </p>
                         </div>
                     </div>
-
                     <div class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3 class="title">Useful Pages</h3>
+                            <h3 class="title">Paginas</h3>
                             <ul>
-                                <li><a href="product.html">Product</a></li>
-                                <li><a href="product-detail.html">Product Detail</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="login.html">Login & Register</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="product-list.html">Produtos</a></li>
+                                <li><a href="wishlist.html">Favorito</a></li>
+                                <li><a href="cart.html">Carrinho</a></li>
+                                <li><a href="login.php">Entrar</a></li>
+                                <li><a href="cadastro.php">Cadastrar</a></li>
+                                <li><a href="my-account.html">Minha Conta</a></li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6">
+                    
+                    <div  align="rignt"class="col-lg-3 col-md-6">
                         <div class="footer-widget">
-                            <h3 class="title">Quick Links</h3>
-                            <ul>
-                                <li><a href="product.html">Product</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="login.html">Login & Register</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-widget">
-                            <h3 class="title">Get in Touch</h3>
+                            <h3 class="title">Entre em Contato</h3>
                             <div class="contact-info">
-                                <p><i class="fa fa-map-marker"></i>123 E Shop, Los Angeles, CA, USA</p>
-                                <p><i class="fa fa-envelope"></i>email@example.com</p>
-                                <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                                <p><i class="fa fa-map-marker"></i>Setor comercial Sul, Bloco A, Senac Jessé Freire</p>
+                                <p><i class="fa fa-envelope"></i>PlayUsados@gmail.com</p>
+                                <p><i class="fa fa-phone"></i>(61)99999-9999</p>
                                 <div class="social">
                                     <a href=""><i class="fa fa-twitter"></i></a>
                                     <a href=""><i class="fa fa-facebook"></i></a>
@@ -238,16 +236,8 @@ if (isset($_POST['login'])) {
                 <div class="row payment">
                     <div class="col-md-6">
                         <div class="payment-method">
-                            <p>We Accept:</p>
+                            <p>Formas de Pagamento:</p>
                             <img src="img/payment-method.png" alt="Payment Method" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="payment-security">
-                            <p>Secured By:</p>
-                            <img src="img/godaddy.svg" alt="Payment Security" />
-                            <img src="img/norton.svg" alt="Payment Security" />
-                            <img src="img/ssl.svg" alt="Payment Security" />
                         </div>
                     </div>
                 </div>
@@ -257,19 +247,6 @@ if (isset($_POST['login'])) {
 
         
         <!-- Footer Bottom Start -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 copyright">
-                        <p>Copyright &copy; <a href="https://htmlcodex.com">HTML Codex</a>. All Rights Reserved</p>
-                    </div>
-
-                    <div class="col-md-6 template-by">
-                        <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Footer Bottom End -->
         
         
