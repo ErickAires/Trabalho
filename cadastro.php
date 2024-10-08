@@ -1,36 +1,31 @@
 <?php
-require_once 'conexao.php';
-if (isset($_POST['cadastrar'])) {
+
+ if(isset($_POST['submit']))
+ {
+    //print_r($_POST['nome']);
+    //print_r($_POST['sobrenome']);
+    //print_r($_POST['email']);
+    //print_r($_POST['senha']);
+    //print_r($_POST['cpf']);
+    //print_r($_POST['endereco']);
+    //print_r($_POST['telefone']);
+    include_once 'conexao.php';
+
+  
     $nome = $_POST['nome'];
     $sobrenome = $_POST['sobrenome'];
     $email = $_POST['email'];
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
     $cpf = $_POST['cpf'];
     $endereco = $_POST['endereco'];
-    $telefone = $_POST['telefone'];
+    $telefone = $_POST['telefone'];    
+
+   $result = mysqli_query($conexao, "INSERT INTO usuarios (nome,sobrenome,email,senha,cpf,endereco,telefone) 
+   VALUES ('$nome','$sobrenome','$email','$senha','$cpf','$endereco','$telefone')");
    
+ }
 
-    try {
-        $query = "INSERT INTO usuarios (nome, sobrenome, email, senha, cpf, endereco, telefone) VALUES (:nome, :sobrenome, :email, :senha, :cpf, :endereco, :telefone)";
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':sobrenome', $sobrenome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senha);
-        $stmt->bindParam(':cpf', $cpf);
-        $stmt->bindParam(':endereco', $endereco);
-        $stmt->bindParam(':telefone', $telefone);
-        if ($stmt->execute()){
-            echo "Usuario cadastrado com sucesso!";
-        }
-        else{
-            echo "Erro ao cadastrar usuario.";
-        }
-
-    } catch (PDOException $e){
-        echo "Erro: " . $e->getMessage();
-    }
-}
+ 
 ?>
 
 <!DOCTYPE html>
@@ -132,11 +127,9 @@ if (isset($_POST['cadastrar'])) {
         <div align="center" class="headercadastro">    
                     <div class="fundocadastro"> 
                         <div  class="section-header">
-                            <h3>Cadastrar</h3>    
-                        
-                        </div> 
-                        
-                            <form method="post" action="cadastro.php" class="register-form">
+                            <h3>Cadastrar</h3>                           
+                        </div>                     
+                            <form action="cadastro.php" method="POST">
 
                                 <div align="left" class="fundocadastro">
                                     <label for="nome">Nome</label>
@@ -144,17 +137,17 @@ if (isset($_POST['cadastrar'])) {
                                 </div>
                                 <div align="left" class="fundocadastro">
                                     <label for="sobrenome">Sobrenome</label>
-                                    <input id="sobrenome"  class="form-control" type="text" placeholder="Sobrenome" required><br>
+                                    <input id="sobrenome"  class="form-control" type="text" placeholder="sobrenome" required><br>
                                 </div>
                                 
                                 <div align="left" class="fundocadastro">
                                     <label for="email">E-mail</label>
-                                    <input id="email" class="form-control" type="text" placeholder="exemplo@gmail.com" required><br>
+                                    <input id="email" class="form-control" type="email" placeholder="exemplo@gmail.com" required><br>
                                 </div>
 
                                 <div align="left" class="fundocadastro">
                                     <label  for="senha">Senha</label>
-                                    <input id="senha" class="form-control" type="password" placeholder="Senha" required><br>
+                                    <input id="senha" class="form-control" type="password" placeholder="senha" required><br>
                                 </div>
 
                                 <div align="left" class="fundocadastro">
@@ -164,7 +157,7 @@ if (isset($_POST['cadastrar'])) {
 
                                 <div align="left" class="fundocadastro">
                                     <label for="endereco">Endereço</label>
-                                    <input id="endereco" class="form-control" type="text" placeholder="Endereço" required><br>
+                                    <input id="endereco" class="form-control" type="text" placeholder="endereço" required><br>
                                 </div>
                                 
                                 <div align="left" class="fundocadastro">
@@ -173,14 +166,10 @@ if (isset($_POST['cadastrar'])) {
                                    <br>
 
                                 </div>
-        </div>
-                     
-                            
-                                
-                            
+        </div>                        
                                 <div class="col-md-12">
-                                    <button class="btn">Cadastrar</button>
-                                    <!--<input type="submit" name="cadastro" value="cadastro">-->
+                                     <!--<button class="btn">Cadastrar</button>-->
+                                   <input type="submit" name="cadastro" value="cadastro">
                                 </div>
                                 </form>
                             </div>
