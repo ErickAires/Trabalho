@@ -70,8 +70,8 @@ h6 {
     height: 35px;
     padding: 0 15px;
     color: #666666;
-    
-    border-radius: 5px;
+    border: 1px solid #3F69AA;
+    border-radius: 0;
     margin-bottom: 15px
 }
 
@@ -82,7 +82,7 @@ h6 {
 
 .custom-radio .custom-control-label::before,
 .custom-checkbox .custom-control-label::before {
-    
+    border-color: #3F69AA;
     border-radius: 0;
 }
 
@@ -93,10 +93,9 @@ h6 {
 }
 
 button.btn {
-    color: black;
+    color: #ffffff;
     background: #3F69AA;
     border-radius: 0;
-    
 }
 
 
@@ -105,7 +104,7 @@ button.btn {
 /********* Top Header CSS *********/
 /**********************************/
 .top-header {
-    padding: 15px 0;
+    padding: 20px 0;
     background: #ffffff;
 }
 
@@ -115,7 +114,9 @@ button.btn {
 }
 
 .top-header .logo a img {
-    max-height: 60px;
+    max-height: 100px;
+    width: 90px;
+    height: 90px;
 }
 
 .top-header .search {
@@ -319,10 +320,11 @@ button.btn {
 .home-slider {
     position: relative;
     width: 100%;
+
 }
 
 .home-slider .main-slider-item {
-    padding: 0 7.5px;
+    padding: 0 6.5px;
 }
 
 .home-slider .slick-dots {
@@ -433,8 +435,20 @@ button.btn {
     font-size: 35px;
     font-weight: 700;
     text-align: center;
+
+    padding-bottom: 15px;
+}
+.section-header2 h3{
+    position: relative;
+    color: #3F69AA;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
     text-transform: capitalize;
     padding-bottom: 15px;
+}
+    
+
 }
 
 .section-header h2::after,
@@ -1747,56 +1761,9 @@ button.btn {
     } 
 }
 
-.headercadastro {
-    background-color: white; /* Fundo branco para o cabeçalho */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+.logobaixo img {
+    width: 300px; /* ou um valor específico, como '200px' */
+    max-width: 300px; /* limita a largura máxima */
+    
+    
 }
-
-.fundocadastro {
-    background-color: white; /* Fundo branco */
-    padding: 1px; /* Espaçamento interno */
-    margin-top: 0,5%; /* Espaçamento acima */
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-.register-form {
-    display: flex;
-    flex-direction: column; /* Organiza os campos em coluna */
-}
-
-.register-form label {
-    margin-bottom: 5px; /* Espaçamento abaixo do label */
-}
-
-.register-form input {
-    margin-bottom: 15px; /* Espaçamento entre os inputs */
-    padding: 10px; /* Espaçamento interno do input */
-    border: 1px solid #ccc; /* Borda do input */
-    border-radius: 5px; /* Bordas arredondadas */
-    width: 100%; /* Faz o input ocupar toda a largura do contêiner */
-    box-sizing: border-box; /* Inclui o padding e borda no cálculo da largura */
-}
-
-.btn {
-    background-color: #007bff; /* Cor de fundo do botão */
-    color: black; /* Cor do texto */
-    padding: 10px 15px; /* Espaçamento interno do botão */
-    border: none; /* Remove borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor de mão ao passar o mouse */
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-.btn:hover {
-    background-color: #0056b3; /* Cor do botão ao passar o mouse */
-    color: white;
-}
-
-.fundocadastro label {
-    font-weight: bold; /* Deixa o texto em negrito */
-}
-
-
