@@ -103,27 +103,60 @@
 
                                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     $nome = $_POST['nome'];
+                                    $sobrenome = $_POST['sobrenome'];
                                     $email = $_POST['email'];
                                     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+                                    $cpf = $_POST['cpf'];
+                                    $endereco = $_POST['endereco'];
+                                    $telefone = $_POST['telefone'];
 
-                                    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, sobrenome, email, senha, cpf,endereco,telefone) VALUES (:nome,:sobrenome, :email, :senha,:cpf,:endereco,:telefone)");
-                                    if ($stmt->execute([':nome' => $nome,':sobrenome' => $sobrenome, ':email' => $email, ':senha' => $senha,':cpf' => $cpf,':endereco' => $endereco,':telefone' => $telefone])) {
+                                    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, sobrenome, email, senha, cpf, endereco, telefone) VALUES (:nome, :sobrenome, :email, :senha, :cpf, :endereco, :telefone)");
+                                    if ($stmt->execute([':nome' => $nome, ':sobrenome' => $sobrenome, ':email' => $email, ':senha' => $senha, ':cpf' => $cpf, ':endereco' => $endereco, ':telefone' => $telefone])) 
+                                    {
                                         echo "<h1>Usuário cadastrado com sucesso!</h1>";
                                     } else {
-                                        echo "Erro ao cadastrar usuário!";
+                                        echo "<h1>Erro ao cadastrar usuário!</h1>";
                                     }
                                 }
                                 ?>
-                          
                         </div>                     
                         <form method="POST">
-                            Nome: <input type="text" name="nome" required><br>
-                            Sobreome: <input type="text" name="sobrenome" required><br>
-                            Email: <input type="email" name="email" required><br>
-                            Senha: <input type="password" name="senha" required><br>
-                            cpf: <input type="cpf" name="cpf" required><br>
-                            endereco: <input type="endereco" name="endereco" required><br>
-                            telefone: <input type="telefone" name="telefone" required><br>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Nome</label>
+                          <input name="nome" class="form-control" type="text" placeholder="Nome" required><br> 
+                        </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Sobrenome</label>
+                          <input name="sobrenome" class="form-control" type="text" placeholder="Sobrenome" required><br> 
+                        </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">E-mail</label>
+                          <input name="email" class="form-control" type="email" placeholder="exemplo@gmail.com" required><br> 
+                        </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Senha</label>
+                          <input name="email" class="form-control" type="password" placeholder="Senha" required><br> 
+                        </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">CPF</label>
+                          <input name="cpf" class="form-control" type="numero" placeholder="000.000.000-00" required><br> 
+                        </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Endereço</label>
+                          <input name="endereco" class="form-control" type="text" placeholder="Endereço" required><br> 
+                        </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Telefone</label>
+                          <input name="telefone" class="form-control" type="numero" placeholder="(00)00000-0000" required><br> 
+                        </div>
+
                             <button type="submit">Cadastrar</button>
                                 <button onclick="window.location.href='../index.php'">Voltar</button>
                             <button type="reset" class="btn-limpar">Limpar</button>
