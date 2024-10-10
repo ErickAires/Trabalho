@@ -1,41 +1,10 @@
-<?php
-
- if(isset($_POST['submit']))
- {
-    //print_r($_POST['nome']);
-    //print_r($_POST['sobrenome']);
-    //print_r($_POST['email']);
-    //print_r($_POST['senha']);
-    //print_r($_POST['cpf']);
-    //print_r($_POST['endereco']);
-    //print_r($_POST['telefone']);
-    include_once 'conexao.php';
-
-  
-    $nome = $_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
-    $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-    $cpf = $_POST['cpf'];
-    $endereco = $_POST['endereco'];
-    $telefone = $_POST['telefone'];    
-
-   $result = mysqli_query($conexao, "INSERT INTO usuarios (nome,sobrenome,email,senha,cpf,endereco,telefone) 
-   VALUES ('$nome','$sobrenome','$email','$senha','$cpf','$endereco','$telefone')");
-   
- }
-
- 
-?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title>PlayUsados - Fazer Cadastro</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Bootstrap Ecommerce Template" name="keywords">
-        <meta content="Bootstrap Ecommerce Template Free Download" name="description">
+       
 
         <!-- Favicon -->
         <link href="img/favicon.ico" rel="icon">
@@ -123,61 +92,95 @@
                 </nav>
             </div>
         </div>
+
+        <br>
         <!-- Header End --> 
         <div align="center" class="headercadastro">    
                     <div class="fundocadastro"> 
                         <div  class="section-header">
-                            <h3>Cadastrar</h3>                           
+                            <h3>Cadastrar</h3> 
+                                                            
+                                <?php
+                                require 'conexao.php';
+
+                                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                    $nome = $_POST['nome'];
+                                    $sobrenome = $_POST['sobrenome'];
+                                    $email = $_POST['email'];
+                                    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+                                    $cpf = $_POST['cpf'];
+                                    $endereco = $_POST['endereco'];
+                                    $telefone = $_POST['telefone'];
+
+                                    $stmt = $pdo->prepare("INSERT INTO usuarios (nome, sobrenome, email, senha, cpf, endereco, telefone) VALUES (:nome, :sobrenome, :email, :senha, :cpf, :endereco, :telefone)");
+                                    if ($stmt->execute([':nome' => $nome, ':sobrenome' => $sobrenome, ':email' => $email, ':senha' => $senha, ':cpf' => $cpf, ':endereco' => $endereco, ':telefone' => $telefone])) 
+                                    {
+                                        echo "<h1>Seja bem vindo!</h1>";
+                                    } else {
+                                        echo "<h1>Erro ao cadastrar usuário!</h1>";
+                                    }
+                                }
+                                ?>
                         </div>                     
-                            <form action="cadastro.php" method="POST">
+                        <form method="POST">
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Nome</label>
+                          <input name="nome" class="form-control" type="text" placeholder="Nome" required><br> 
+                          </div>
+                        </div>  
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Sobrenome</label>
+                          <input name="sobrenome" class="form-control" type="text" placeholder="Sobrenome" required><br> 
+                          </div>
+                        </div>  
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">E-mail</label>
+                          <input name="email" class="form-control" type="email" placeholder="exemplo@gmail.com" required><br> 
+                          </div>
+                        </div>  
+                        <div class="col-md-6">
+                            <div align="left" class="fundocadastro">
+                                <label for="senha">Senha</label>
+                                <input name="senha" id="senha" class="form-control" type="password" placeholder="Senha" required><br> 
+                             </div>
+                        </div>
 
-                                <div align="left" class="fundocadastro">
-                                    <label for="nome">Nome</label>
-                                    <input id="nome" class="form-control" type="text" placeholder="Nome" required><br>
-                                </div>
-                                <div align="left" class="fundocadastro">
-                                    <label for="sobrenome">Sobrenome</label>
-                                    <input id="sobrenome"  class="form-control" type="text" placeholder="sobrenome" required><br>
-                                </div>
-                                
-                                <div align="left" class="fundocadastro">
-                                    <label for="email">E-mail</label>
-                                    <input id="email" class="form-control" type="email" placeholder="exemplo@gmail.com" required><br>
-                                </div>
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">CPF</label>
+                          <input name="cpf" class="form-control" type="numero" placeholder="000.000.000-00" required><br> 
+                          </div>
+                        </div>  
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Endereço</label>
+                          <input name="endereco" class="form-control" type="text" placeholder="Endereço" required><br> 
+                          </div>
+                        </div>  
+                        <div class="col-md-6">
+                          <div align="left" class="fundocadastro">
+                          <label for="nome">Telefone</label>
+                          <input name="telefone" class="form-control" type="numero" placeholder="(00)00000-0000" required><br> 
+                          </div>
+                        </div>
+                        <div align="center" class="fundocadastro">   <!--<button class="btn">Cadastrar</button>-->
+                            <button class="btn" type="submit">Cadastrar</button>
+                        </div> 
+                        <br>   
+                            <button class="btn" type="reset" class="btn-limpar">Limpar</button>
+                        </form>
 
-                                <div align="left" class="fundocadastro">
-                                    <label  for="senha">Senha</label>
-                                    <input id="senha" class="form-control" type="password" placeholder="senha" required><br>
-                                </div>
-
-                                <div align="left" class="fundocadastro">
-                                    <label for="cpf">CPF</label>
-                                    <input id="cpf" class="form-control" type="text" placeholder="000.000.000-00" required><br>
-                                </div>
-
-                                <div align="left" class="fundocadastro">
-                                    <label for="endereco">Endereço</label>
-                                    <input id="endereco" class="form-control" type="text" placeholder="endereço" required><br>
-                                </div>
-                                
-                                <div align="left" class="fundocadastro">
-                                    <label for="telefone">Telefone</label>
-                                    <input id="telefone" class="form-control" type="text" placeholder="(00)00000-0000"required>
-                                   <br>
-
-                                </div>
-        </div>                        
-                                <div class="col-md-12">
-                                     <!--<button class="btn">Cadastrar</button>-->
-                                   <input type="submit" name="cadastro" value="cadastro">
-                                </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <br>
         <!-- Login End -->
         
         
