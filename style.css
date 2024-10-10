@@ -449,7 +449,7 @@ button.btn {
 }
     
 
-}
+
 
 .section-header h2::after,
 .section-header h3::after {
@@ -1591,6 +1591,13 @@ button.btn {
     .footer .container-fluid {
         max-width: 95%;
     }
+}
+.row{
+    width: 100%;
+    height: 100%;
+    max-height:auto;
+    top:50%;
+    left: 50%;
 }
 
 .footer .footer-widget {
