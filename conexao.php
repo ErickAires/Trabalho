@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'sistema';
+$dbname = 'pets';
 $user = 'root';
 $pass = '';
 
@@ -10,4 +10,5 @@ try {
 } catch (PDOException $e) {
     die("Erro: " . $e->getMessage());
 }
+
 ?>
