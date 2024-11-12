@@ -1,0 +1,70 @@
+/* Estilo geral da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container central para a confirmação */
+.confirmation-container {
+    text-align: center;
+    padding: 50px 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Ícone de confirmação */
+.confirmation-icon span {
+    font-size: 70px;
+    color: #28a745; /* Verde para o ícone */
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Título da confirmação */
+.confirmation-container h1 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Container dos botões */
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Estilo dos botões */
+.button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff7a00; /* Laranja */
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 122, 0, 0.2);
+}
+
+/* Efeito hover dos botões */
+.button:hover {
+    background-color: #e66a00; /* Laranja mais escuro no hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 122, 0, 0.3);
+}
+
+/* Efeito clique */
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(255, 122, 0, 0.2);
+}
