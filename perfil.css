@@ -1,0 +1,177 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do Body */
+body {
+    background-color: #f0f8f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Principal */
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    transition: box-shadow 0.3s;
+}
+
+/* Efeito de Fade-In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Estilo do Cabeçalho */
+header {
+    text-align: center;
+    padding: 15px;
+    background-color: #33cc33;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header:hover {
+    background-color: #29a329;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Título Principal */
+.profile-section h1 {
+    color: #ff6600;
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Seções de Informação */
+.user-info, .purchases-section, .pet-info-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f9f9, #f2f2f2);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efeito de Hover nas Seções */
+.user-info:hover, .purchases-section:hover, .pet-info-section:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo dos Subtítulos */
+.user-info h2, .purchases-section h2, .pet-info-section h2 {
+    color: #33cc33;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Parágrafos de Dados */
+p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+strong {
+    color: #ff6600;
+}
+
+/* Tabela de Compras */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 1em;
+}
+
+thead {
+    background-color: #33cc33;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f2f9f3;
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+th {
+    font-weight: bold;
+}
+
+td {
+    color: #333;
+}
+
+/* Links */
+a {
+    color: #33cc33;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff6600;
+}
+
+/* Estilo Interativo para Inputs (Caso sejam adicionados) */
+input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+    border-color: #ff6600;
+    outline: none;
+    box-shadow: 0 0 8px rgba(51, 204, 51, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    header {
+        font-size: 1.8em;
+    }
+    .profile-section h1 {
+        font-size: 2em;
+    }
+    .user-info h2, .purchases-section h2, .pet-info-section h2 {
+        font-size: 1.5em;
+    }
+    table, p {
+        font-size: 0.9em;
+    }
+}
